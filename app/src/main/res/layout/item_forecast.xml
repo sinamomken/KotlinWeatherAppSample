@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            tools:text="May 15, 2015"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            tools:text="Rainy"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/maxTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            tools:text="40"/>
+
+        <TextView
+            android:id="@+id/minTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            tools:text="20"/>
+
+
+    </LinearLayout>
+</LinearLayout>
