@@ -13,7 +13,7 @@ import ir.momken.KotlinWeatherApp.ui.utils.ctx
 import org.jetbrains.anko.find
 
 class ForecastListAdapter(val weekForecast: ForecastList,
-                          val itemClickListener: OnItemClickListener) :
+                          val itemClickListener: (Forecast) -> Unit) :
     RecyclerView.Adapter<ForecastListAdapter.ViewHolder> ()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,7 +29,7 @@ class ForecastListAdapter(val weekForecast: ForecastList,
 
     override fun getItemCount(): Int = weekForecast.size
 
-    class ViewHolder(val view: View, val itemClickListener: OnItemClickListener)
+    class ViewHolder(view: View, val itemClickListener: (Forecast) -> Unit)
         : RecyclerView.ViewHolder(view){
 
         private val iconView = view.find<ImageView>(R.id.icon)
