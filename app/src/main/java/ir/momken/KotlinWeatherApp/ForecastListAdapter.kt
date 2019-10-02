@@ -11,6 +11,7 @@ import ir.momken.KotlinWeatherApp.domain.model.Forecast
 import ir.momken.KotlinWeatherApp.domain.model.ForecastList
 import ir.momken.KotlinWeatherApp.ui.utils.ctx
 import org.jetbrains.anko.find
+import kotlinx.android.synthetic.main.item_forecast.view.*
 
 class ForecastListAdapter(val weekForecast: ForecastList,
                           val itemClickListener: (Forecast) -> Unit) :
@@ -32,19 +33,13 @@ class ForecastListAdapter(val weekForecast: ForecastList,
     class ViewHolder(view: View, val itemClickListener: (Forecast) -> Unit)
         : RecyclerView.ViewHolder(view){
 
-        private val iconView = view.find<ImageView>(R.id.icon)
-        private val dateView = view.find<TextView>(R.id.date)
-        private val descriptionView = view.find<TextView>(R.id.description)
-        private val maxTempView = view.find<TextView>(R.id.maxTemp)
-        private val minTempView = view.find<TextView>(R.id.minTemp)
-
         fun bindForecast(forecast: Forecast){
             with(forecast){
-                Picasso.get().load(iconUrl).into(iconView)
-                dateView.text = date
-                descriptionView.text = description
-                maxTempView.text = "$high"
-                minTempView.text = "$low"
+                Picasso.get().load(iconUrl).into(itemView.icon)
+                itemView.date.text = date
+                itemView.description.text = description
+                itemView.maxTemp.text = "$high"
+                itemView.minTemp.text = "$low"
                 itemView.setOnClickListener{itemClickListener(this)}
             }
         }
