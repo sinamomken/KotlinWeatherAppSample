@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         forecastList.layoutManager = LinearLayoutManager(this)
 
-        val url = "http://api.openweathermap.org/data/2.5/forecast/daily?" +
+        val url = "https://api.openweathermap.org/data/2.5/forecast/daily?" +
                 "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7"
         doAsync() {
             val result = RequestForecastCommand("94043").execute()
